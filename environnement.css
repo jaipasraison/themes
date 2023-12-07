@@ -1,4 +1,30 @@
+body {
+    background-color: #E0FFC8;
+}
+
+/*--
+Scroll Bar
+--*/
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #18CA34;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #06851A;
+}
+
 .banderole {
-    background-color: #C8FF9D;
     background-image: url("images/environnement.png");
 }
