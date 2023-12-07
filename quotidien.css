@@ -2,6 +2,10 @@ body {
     background-color: #FFCDCD;
 }
 
+p {
+    color: #4E0000;
+}
+
 /*--
 Scroll Bar
 --*/
