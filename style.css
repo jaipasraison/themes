@@ -154,3 +154,11 @@ h1 {
 body {
     font-family: Calibri;
 }
+
+button {
+    padding: 10px;
+    background-color: #0d0d0d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  }
