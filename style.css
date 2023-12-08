@@ -101,3 +101,8 @@ button {
     border: none;
     border-radius: 4px;
   }
+
+  Button:hover {
+    background-color: #565656;
+    border-radius: 15px;
+}
