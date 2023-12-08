@@ -13,6 +13,8 @@ h1,h2,h3{
 
 .themeButton{
     background-color: #18CA34;
+    color: #0E0E0E;
+
 }
 
 .themeButton:hover {
