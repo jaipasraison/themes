@@ -15,9 +15,8 @@ h1,h2,h3{
     background-color: #FFD53E;
     color: #0E0E0E;
     border: none;
-    border-radius: 15%;
-    padding-left: 1%;
-    padding-right: 1%;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 /*--
