@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="" id="theme-css">
+</head>
+<body>
+    <h1>Mes thèmes</h1>
+    <div id="themes">
+        <div class="icon" id="environnement">
+            <img src="images/icon_environnement.png" alt="Icône environnement" class="icon-theme">
+            <p class="categorie">Environnement</p>
+            <p class="description"></p>
+        </div>
+        <div class="icon" id="alimentation">
+            <img src="images/icon_alimentation.png" alt="Icône alimentation" class="icon-theme">
+            <p class="categorie">Alimentation</p>
+            <p class="description"></p>
+        </div>
+        <div class="icon" id="energie">
+            <img src="images/icon_energie.png" alt="Icône énergie" class="icon-theme">
+            <p class="categorie">Énergie</p>
+            <p class="description"></p>
+        </div>
+        <div class="icon" id="quotidien">
+            <img src="images/icon_quotidien.png" alt="Icône quotidien" class="icon-theme">
+            <p class="categorie">Quotidien</p>
+            <p class="description"></p>
+        </div>
+        <div class="icon" id="transports">
+            <img src="images/icon_transports.png" alt="Icône transports" class="icon-theme">
+            <p class="categorie">Transports</p>
+            <p class="description"></p>
+        </div>
+    </div>
+    <div id="themeBase">
+        <a class="button" id="buttonThemeBase">Revenir au thème de base</a>
+    </div>
+    <div class="banderole"></div>
+</body>
+</html>
+
+<script>
+
+    // Définition de tous les éléments débloqués à false
+    // if(localStorage.getItem("unlockedItems") == null)
+    // {
+        localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": true }, { "energie": true }, { "quotidien": true }, { "transports": false } ] ));
+    // }
+
+    let indexs = new Map();
+    indexs.set("environnement", 0);
+    indexs.set("alimentation", 1);
+    indexs.set("energie", 2);
+    indexs.set("quotidien", 3);
+    indexs.set("transports", 4);
+
+    let divIcons = document.querySelectorAll(".icon");
+    divIcons.forEach((div) => {
+        let libelle = div.id;
+        let index = indexs.get(libelle);
+        for(let key in JSON.parse(localStorage.unlockedItems)[index])
+        {
+            if(key == libelle && !JSON.parse(localStorage.unlockedItems)[index][libelle])
+            {
+                div.classList.add("locked");
+                div.getElementsByTagName("p")[1].textContent = "Bloqué";
+            }
+            else if(key == libelle && JSON.parse(localStorage.unlockedItems)[index][libelle])
+            {
+                div.classList.add("unlocked");
+                div.getElementsByTagName("p")[1].textContent = "Débloqué !";
+                div.addEventListener("click", changeTheme);
+            }
+        }
+    })
+
+    function changeTheme(event)
+    {
+        let libelle = event.target.id;
+        document.querySelector("#theme-css").href = `${libelle}.css`;
+        localStorage.setItem("currentTheme", `${libelle}`);
+    }
+
+    if(localStorage.currentTheme != null)
+    {
+        if(localStorage.currentTheme == "base")
+        {
+            document.querySelector("#theme-css").href = "";
+        }
+        else
+        {
+            document.querySelector("#theme-css").href = `${localStorage.currentTheme}.css`;
+        }
+    }
+
+    let buttonThemeBase = document.querySelector("#buttonThemeBase");
+    buttonThemeBase.addEventListener("click", displayThemeBase);
+    function displayThemeBase()
+    {
+        document.querySelector("#theme-css").href = "";
+        localStorage.setItem("currentTheme", "base");
+    }
+
+    // localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": JSON.parse(localStorage.unlockedItems)[1].alimentation }, { "energie": JSON.parse(localStorage.unlockedItems)[2].energie }, { "quotidien": JSON.parse(localStorage.unlockedItems)[3].quotidien }, { "transports": JSON.parse(localStorage.unlockedItems)[4].transports } ] ));
+
+    // console.log(localStorage.getItem("unlockedItems"));
+
+</script>
