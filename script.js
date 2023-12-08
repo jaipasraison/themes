@@ -1,3 +1,4 @@
+// A METTRE SUR CHAQUE PAGE !!!!!
 if(localStorage.getItem("unlockedItems") == null)
 {
     localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": false }, { "alimentation": false }, { "energie": false }, { "quotidien": false }, { "transports": false } ] ));
