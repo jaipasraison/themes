@@ -2,6 +2,97 @@
     height: 17vh;
     background-size: contain;
     background-repeat: repeat;
+
+}
+
+/*Environnement*/
+@font-face {
+    font-family: Environnement;
+    src: url(polices/CabinSketch-Regular.ttf);
+}
+
+/*Geste du quotidien*/
+@font-face {
+    font-family: Quotidien;
+    src: url(polices/PollerOne-Regular.ttf);
+}
+
+/*Transport*/
+@font-face {
+    font-family: Transport;
+    src: url(polices/NicoMoji-Regular.ttf);
+}
+
+/*Energie*/
+@font-face {
+    font-family: Energie;
+    src: url(polices/K2D-Regular.ttf);
+}
+
+/*Alimentation*/
+@font-face {
+    font-family: Alimentation;
+    src: url(polices/Niconne-Regular.ttf);
+}
+
+h1 {
+    text-align: center;
+}
+
+#themes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+#themeBase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#themes > div
+{
+    text-align: center;
+}
+
+.categorie {
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.locked {
+    cursor: not-allowed;
+}
+
+.unlocked {
+    cursor: pointer;
+}
+
+.icon-theme {
+    height: 7vh;
+    width: auto;
+    pointer-events: none;
+}
+
+.description {
+    pointer-events: none;
+}
+
+#buttonThemeBase {
+    color: white;
+    background-color: black;
+    padding: 1em;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* A ENLEVER */
+body {
+    font-family: Calibri;
 }
 
 h1 {
