@@ -37,7 +37,7 @@
         </div>
     </div>
     <div id="themeBase">
-        <a class="button" id="buttonThemeBase">Revenir au thème de base</a>
+        <button class="themeButton" id="buttonThemeBase" type="button">Revenir au thème de base</button>
     </div>
     <div class="banderole"></div>
 </body>
@@ -48,7 +48,7 @@
     // Définition de tous les éléments débloqués à false
     // if(localStorage.getItem("unlockedItems") == null)
     // {
-        localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": true }, { "energie": true }, { "quotidien": true }, { "transports": false } ] ));
+        localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": true }, { "energie": true }, { "quotidien": true }, { "transports": true } ] ));
     // }
 
     let indexs = new Map();
