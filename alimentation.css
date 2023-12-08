@@ -12,9 +12,11 @@ h1,h2,h3{
 }
 
 .themeButton{
-    background-color: #E43EFF;
-    color: #0E0E0E;
-    
+    background-color: #E43EFF;    
+}
+.themeButton:hover {
+    background-color: #67de79;
+    border-radius: 15px;
 }
 
 /*--
