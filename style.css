@@ -3,3 +3,63 @@
     background-size: contain;
     background-repeat: repeat;
 }
+
+h1 {
+    text-align: center;
+}
+
+#themes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+#themeBase {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#themes > div
+{
+    text-align: center;
+}
+
+.categorie {
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.locked {
+    cursor: not-allowed;
+}
+
+.unlocked {
+    cursor: pointer;
+}
+
+.icon-theme {
+    height: 7vh;
+    width: auto;
+    pointer-events: none;
+}
+
+.description {
+    pointer-events: none;
+}
+
+#buttonThemeBase {
+    color: white;
+    background-color: black;
+    padding: 1em;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* A ENLEVER */
+body {
+    font-family: Calibri;
+}
