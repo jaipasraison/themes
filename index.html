@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Mes thèmes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="" id="theme-css">
 </head>
@@ -36,77 +36,16 @@
             <p class="description"></p>
         </div>
     </div>
+    <div id="selectedTheme">
+        <p></p>
+    </div>
     <div id="themeBase">
         <button class="themeButton" id="buttonThemeBase" type="button">Revenir au thème de base</button>
     </div>
+    <!-- A METTRE A CHAQUE FIN DE PAGE !!!!!!!!!!!!!!!! MERCI LOL -->
     <div class="banderole"></div>
 </body>
 </html>
 
-<script>
-
-    // Définition de tous les éléments débloqués à false
-    // if(localStorage.getItem("unlockedItems") == null)
-    // {
-        localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": true }, { "energie": true }, { "quotidien": true }, { "transports": true } ] ));
-    // }
-
-    let indexs = new Map();
-    indexs.set("environnement", 0);
-    indexs.set("alimentation", 1);
-    indexs.set("energie", 2);
-    indexs.set("quotidien", 3);
-    indexs.set("transports", 4);
-
-    let divIcons = document.querySelectorAll(".icon");
-    divIcons.forEach((div) => {
-        let libelle = div.id;
-        let index = indexs.get(libelle);
-        for(let key in JSON.parse(localStorage.unlockedItems)[index])
-        {
-            if(key == libelle && !JSON.parse(localStorage.unlockedItems)[index][libelle])
-            {
-                div.classList.add("locked");
-                div.getElementsByTagName("p")[1].textContent = "Bloqué";
-            }
-            else if(key == libelle && JSON.parse(localStorage.unlockedItems)[index][libelle])
-            {
-                div.classList.add("unlocked");
-                div.getElementsByTagName("p")[1].textContent = "Débloqué !";
-                div.addEventListener("click", changeTheme);
-            }
-        }
-    })
-
-    function changeTheme(event)
-    {
-        let libelle = event.target.id;
-        document.querySelector("#theme-css").href = `${libelle}.css`;
-        localStorage.setItem("currentTheme", `${libelle}`);
-    }
-
-    if(localStorage.currentTheme != null)
-    {
-        if(localStorage.currentTheme == "base")
-        {
-            document.querySelector("#theme-css").href = "";
-        }
-        else
-        {
-            document.querySelector("#theme-css").href = `${localStorage.currentTheme}.css`;
-        }
-    }
-
-    let buttonThemeBase = document.querySelector("#buttonThemeBase");
-    buttonThemeBase.addEventListener("click", displayThemeBase);
-    function displayThemeBase()
-    {
-        document.querySelector("#theme-css").href = "";
-        localStorage.setItem("currentTheme", "base");
-    }
-
-    // localStorage.setItem("unlockedItems", JSON.stringify( [ { "environnement": true }, { "alimentation": JSON.parse(localStorage.unlockedItems)[1].alimentation }, { "energie": JSON.parse(localStorage.unlockedItems)[2].energie }, { "quotidien": JSON.parse(localStorage.unlockedItems)[3].quotidien }, { "transports": JSON.parse(localStorage.unlockedItems)[4].transports } ] ));
-
-    // console.log(localStorage.getItem("unlockedItems"));
-
-</script>
+<script src="script.js"></script>
+<script src="themes.js"></script>
