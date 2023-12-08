@@ -11,6 +11,14 @@ h1,h2,h3{
     font-family: Energie;
 }
 
+.themeButton{
+    background-color: #FFD53E;
+    color: #0E0E0E;
+    border: none;
+    border-radius: 15%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
 
 /*--
 Scroll Bar
