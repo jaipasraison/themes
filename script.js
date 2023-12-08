@@ -25,16 +25,19 @@ divIcons.forEach((div) => {
         {
             div.classList.add("unlocked");
             div.getElementsByTagName("p")[1].textContent = "Débloqué !";
+            //a ajouter au select
             div.addEventListener("click", changeTheme);
         }
     }
 })
 
+            //a ajouter au select
 function changeTheme(event)
 {
     let libelle = event.target.id;
     document.querySelector("#theme-css").href = `${libelle}.css`;
     localStorage.setItem("currentTheme", `${libelle}`);
+
     if(localStorage.currentTheme == "base")
     {
         document.querySelector("#selectedTheme").firstElementChild.textContent = "Le thème sélectionné est le thème de base.";
